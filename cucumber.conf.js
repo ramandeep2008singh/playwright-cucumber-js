@@ -1,17 +1,23 @@
-const {Before, BeforeAll, AfterAll, After, setDefaultTimeout} = require("@cucumber/cucumber");
-// you can choose other browsers like webkit or firefox according to your requirement
-const {chromium} = require("playwright");
-//const {firefox} = require("playwright");
-//const {webkit} = require("playwright");
+const { Before, BeforeAll, AfterAll, After, setDefaultTimeout } = require("@cucumber/cucumber");
+const { chromium } = require("playwright");
 
-// in milliseconds
+// Set default timeout for scenarios
 setDefaultTimeout(60000);
+
+module.exports = {
+    default: {
+        require: [
+            'F:/playwright-cucumber-js/acceptance/setup.js',
+            'F:/playwright-cucumber-js/acceptance/stepDefinitions/*.js'
+        ],
+    },
+};
 
 Object.assign(global, {
     BASE_URL: 'https://www.newyorker.de/men/'
 });
 
-// launch the browser
+// Launch the browser
 BeforeAll(async function () {
     global.browser = await chromium.launch({
         headless: true,
@@ -19,7 +25,7 @@ BeforeAll(async function () {
     });
 });
 
-// close the browser
+// Close the browser after all tests
 AfterAll(async function () {
     await global.browser.close();
 });
