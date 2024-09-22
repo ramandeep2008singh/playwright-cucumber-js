@@ -1,5 +1,5 @@
-const { Before, BeforeAll, AfterAll, After, setDefaultTimeout } = require("@cucumber/cucumber");
-const { chromium } = require("playwright");
+const { Before, BeforeAll, AfterAll, After, setDefaultTimeout } = require('@cucumber/cucumber');
+const { chromium } = require('playwright');
 
 // Set default timeout for scenarios
 setDefaultTimeout(60000);

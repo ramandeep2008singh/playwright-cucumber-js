@@ -1,6 +1,5 @@
-const {Given, When, Then} = require('@cucumber/cucumber')
-const {expect} = require("@playwright/test");
-const {HomePage} = require("../pageObjects/homePage");
+const { Given, When, Then } = require('@cucumber/cucumber');
+const { HomePage } = require('../pageObjects/homePage');
 
 Given('I am on the home screen', async function () {
     const homePage = new HomePage(page);

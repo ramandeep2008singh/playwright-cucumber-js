@@ -1,6 +1,7 @@
-const { expect } = require('@playwright/test');
+const expect = require('@playwright/test');
 
-exports.HomePage = class HomePage {
+exports.CategoriesPage = class CategoriesPage {
+
     /**
      * @param {import('@playwright/test').Page} page
      */
@@ -20,9 +21,9 @@ exports.HomePage = class HomePage {
         }
     }
 
-    async visit(BASE_URL) {
+    async visit() {
         await this.page.goto(BASE_URL);  // Pass the base URL dynamically
-        await this.page.waitForLoadState('networkidle');  // Wait for the page to fully load
+        // await this.page.waitForLoadState('networkidle');  // Wait for the page to fully load
     }
 
     async clickSideMenu() {

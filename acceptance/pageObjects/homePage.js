@@ -1,4 +1,4 @@
-const {expect} = require('@playwright/test');
+const expect = require('@playwright/test');
 
 exports.HomePage = class HomePage {
 
@@ -31,7 +31,7 @@ exports.HomePage = class HomePage {
 
     async assertPageUrl() {
         await this.page.waitForURL(BASE_URL)
-        await expect(page.url()).toEqual(BASE_URL);
+        await expect(this.page.url()).toEqual(BASE_URL);
     }
 
     async clickLoginIcon() {

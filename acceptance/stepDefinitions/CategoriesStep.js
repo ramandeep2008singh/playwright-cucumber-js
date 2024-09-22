@@ -1,20 +1,23 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const homePage = require('../pageObjects/CategoriesStep');
+const { Given, When } = require('@cucumber/cucumber');
+const { CategoriesPage } = require('../pageObjects/CategoriesPage');
 
 Given('I land on the homepage', async function() {
-    await homePage.visit(BASE_URL);  // Navigate to homepage
-    await homePage.acceptCookie();  // Accept cookies if needed
+    const categoriesPage = new CategoriesPage(page);
+    await categoriesPage.visit();  // Navigate to homepage
+    await categoriesPage.acceptCookie();  // Accept cookies if needed
 });
 
 When('I open the side menu', async function() {
-    await homePage.clickSideMenu();  // Open the side menu
+    const categoriesPage = new CategoriesPage(page);
+    await categoriesPage.clickSideMenu();  // Open the side menu
+});
+
+When('I select three different categories', async function() {
+    const categoriesPage = new CategoriesPage(page);
+    await categoriesPage.selectCategories(['T-Shirts','Sweatshirts & Pullover','Hemden']);  // Adjust category names as needed
 });
 
 When('I Select product from the side menu', async function() {
-    await homePage.selectProduct();  // Open the side menu
-});
-
-
-When('I select three different categories', async function() {
-    await homePage.selectCategories(['T-Shirts','Sweatshirts & Pullover','Hemden']);  // Adjust category names as needed
+    const categoriesPage = new CategoriesPage(page);
+    await categoriesPage.selectProduct();  // Open the side menu
 });

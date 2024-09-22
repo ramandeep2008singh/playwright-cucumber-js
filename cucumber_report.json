@@ -4,62 +4,9 @@
     "elements": [
       {
         "description": "",
-        "id": "categories;url-of-home-page",
-        "keyword": "Scenario",
-        "line": 6,
-        "name": "URL of Home page",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 864171100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 7,
-            "name": "I am on the home screen",
-            "match": {
-              "location": "acceptance\\stepDefinitions\\HomeStep.js:5"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3819724400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 8,
-            "name": "I should be able to see the correct URL",
-            "match": {
-              "location": "acceptance\\stepDefinitions\\HomeStep.js:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4212199
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 11693000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
         "id": "categories;select-three-categories-from-the-menu",
         "keyword": "Scenario",
-        "line": 10,
+        "line": 6,
         "name": "Select three categories from the menu",
         "steps": [
           {
@@ -67,30 +14,30 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 102266499
+              "duration": 39878083
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 11,
+            "line": 7,
             "name": "I land on the homepage",
             "match": {
-              "location": "acceptance\\stepDefinitions\\CategoriesStep.js:4"
+              "location": "acceptance/stepDefinitions/CategoriesStep.js:4"
             },
             "result": {
               "status": "failed",
-              "duration": 340500,
-              "error_message": "TypeError: homePage.visit is not a function\n    at World.<anonymous> (F:\\playwright-cucumber-js\\acceptance\\stepDefinitions\\CategoriesStep.js:5:20)"
+              "duration": 1906762666,
+              "error_message": "locator.isVisible: Error: strict mode violation: locator('.cookie-banner .cookie-banner-controls button') resolved to 3 elements:\n    1) <button>…</button> aka locator('cookie-banner').getByRole('button', { name: 'Alle Cookies akzeptieren' })\n    2) <button>…</button> aka getByRole('button', { name: 'Nur erforderliche Cookies' })\n    3) <button>…</button> aka getByRole('button', { name: 'Cookie-Einstellungen' }).nth(2)\n\nCall log:\n  \u001b[2m-   checking visibility of locator('.cookie-banner .cookie-banner-controls button')\u001b[22m\n\n    at CategoriesPage.acceptCookie (/Users/igranagi/Downloads/playwright-cucumber-js/acceptance/pageObjects/CategoriesPage.js:17:40)\n    at World.<anonymous> (/Users/igranagi/Downloads/playwright-cucumber-js/acceptance/stepDefinitions/CategoriesStep.js:7:26)"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 12,
+            "line": 8,
             "name": "I open the side menu",
             "match": {
-              "location": "acceptance\\stepDefinitions\\CategoriesStep.js:9"
+              "location": "acceptance/stepDefinitions/CategoriesStep.js:10"
             },
             "result": {
               "status": "skipped",
@@ -99,11 +46,24 @@
           },
           {
             "arguments": [],
-            "keyword": "And ",
-            "line": 13,
+            "keyword": "When ",
+            "line": 9,
             "name": "I select three different categories",
             "match": {
-              "location": "acceptance\\stepDefinitions\\CategoriesStep.js:18"
+              "location": "acceptance/stepDefinitions/CategoriesStep.js:15"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I Select product from the side menu",
+            "match": {
+              "location": "acceptance/stepDefinitions/CategoriesStep.js:20"
             },
             "result": {
               "status": "skipped",
@@ -113,7 +73,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 14,
+            "line": 11,
             "name": "I should be able to see the selected categories",
             "result": {
               "status": "undefined",
@@ -125,7 +85,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 7957900
+              "duration": 10207625
             }
           }
         ],
@@ -138,7 +98,7 @@
     "keyword": "Feature",
     "name": "Categories",
     "tags": [],
-    "uri": "acceptance\\features\\Categories.feature"
+    "uri": "acceptance/features/Categories.feature"
   },
   {
     "description": "    As a user \n    I want to test all basic scenarios for Home Page",
@@ -155,7 +115,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 93504799
+              "duration": 50948542
             }
           },
           {
@@ -164,11 +124,11 @@
             "line": 7,
             "name": "I am on the home screen",
             "match": {
-              "location": "acceptance\\stepDefinitions\\HomeStep.js:5"
+              "location": "acceptance/stepDefinitions/HomeStep.js:4"
             },
             "result": {
               "status": "passed",
-              "duration": 1098325100
+              "duration": 1416221708
             }
           },
           {
@@ -177,11 +137,12 @@
             "line": 8,
             "name": "I should be able to see the correct URL",
             "match": {
-              "location": "acceptance\\stepDefinitions\\HomeStep.js:10"
+              "location": "acceptance/stepDefinitions/HomeStep.js:9"
             },
             "result": {
-              "status": "passed",
-              "duration": 1253999
+              "status": "failed",
+              "duration": 2306082,
+              "error_message": "Error: Playwright Test did not expect test() to be called here.\nMost common reasons include:\n- You are calling test() in a configuration file.\n- You are calling test() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n    at TestTypeImpl._currentSuite (/Users/igranagi/Downloads/playwright-cucumber-js/node_modules/playwright/lib/common/testType.js:71:13)\n    at TestTypeImpl._createTest (/Users/igranagi/Downloads/playwright-cucumber-js/node_modules/playwright/lib/common/testType.js:80:24)\n    at /Users/igranagi/Downloads/playwright-cucumber-js/node_modules/playwright/lib/transform/transform.js:256:12\n    at HomePage.assertPageUrl (/Users/igranagi/Downloads/playwright-cucumber-js/acceptance/pageObjects/homePage.js:34:15)\n    at async World.<anonymous> (/Users/igranagi/Downloads/playwright-cucumber-js/acceptance/stepDefinitions/HomeStep.js:11:5)"
             }
           },
           {
@@ -189,7 +150,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 5789400
+              "duration": 7447166
             }
           }
         ],
@@ -208,7 +169,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 85215299
+              "duration": 56285708
             }
           },
           {
@@ -217,12 +178,12 @@
             "line": 11,
             "name": "I click on the login icon",
             "match": {
-              "location": "acceptance\\stepDefinitions\\HomeStep.js:15"
+              "location": "acceptance/stepDefinitions/HomeStep.js:14"
             },
             "result": {
               "status": "failed",
-              "duration": 30126813000,
-              "error_message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('.cookie-banner .cookie-banner-controls button')\u001b[22m\n\n    at HomePage.acceptCookie (F:\\playwright-cucumber-js\\acceptance\\pageObjects\\homePage.js:21:36)\n    at World.<anonymous> (F:\\playwright-cucumber-js\\acceptance\\stepDefinitions\\HomeStep.js:17:20)"
+              "duration": 30102702832,
+              "error_message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('.cookie-banner .cookie-banner-controls button')\u001b[22m\n\n    at HomePage.acceptCookie (/Users/igranagi/Downloads/playwright-cucumber-js/acceptance/pageObjects/homePage.js:21:36)\n    at World.<anonymous> (/Users/igranagi/Downloads/playwright-cucumber-js/acceptance/stepDefinitions/HomeStep.js:16:20)"
             }
           },
           {
@@ -231,7 +192,7 @@
             "line": 12,
             "name": "I should see a panel opened with input fields with email address, password, register and login buttons",
             "match": {
-              "location": "acceptance\\stepDefinitions\\HomeStep.js:22"
+              "location": "acceptance/stepDefinitions/HomeStep.js:21"
             },
             "result": {
               "status": "skipped",
@@ -243,7 +204,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 17840100
+              "duration": 17211209
             }
           }
         ],
@@ -262,7 +223,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 98751400
+              "duration": 51270042
             }
           },
           {
@@ -300,7 +261,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 5756199
+              "duration": 2502540
             }
           }
         ],
@@ -313,6 +274,6 @@
     "keyword": "Feature",
     "name": "Home Page",
     "tags": [],
-    "uri": "acceptance\\features\\Home.feature"
+    "uri": "acceptance/features/Home.feature"
   }
 ]

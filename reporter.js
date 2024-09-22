@@ -1,6 +1,6 @@
-const reporter = require('cucumber-html-reporter')
+import { generate } from 'cucumber-html-reporter';
 
-reporter.generate({
+generate({
     theme: 'bootstrap',
     jsonFile: 'cucumber_report.json',
     output: 'reports/cucumber_report.html',
